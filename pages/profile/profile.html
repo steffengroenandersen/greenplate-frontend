@@ -1,0 +1,407 @@
+<div class="template">
+  <ul
+    class="nav nav-tabs m-5 justify-content-center align-content-center"
+    id="myTab"
+    role="tablist"
+  >
+    <li
+      class="nav-item"
+      role="presentation"
+      style="margin-left: 20px; margin-right: 20px"
+    >
+      <button
+        class="nav-link active"
+        id="welcome-tab"
+        data-bs-toggle="tab"
+        data-bs-target="#welcome-tab-pane"
+        type="button"
+        role="tab"
+        aria-controls="welcome-tab-pane"
+        aria-selected="true"
+      >
+        Velkommen
+      </button>
+    </li>
+    <li
+      class="nav-item"
+      role="presentation"
+      style="margin-left: 20px; margin-right: 20px"
+    >
+      <button
+        class="nav-link"
+        id="profile-tab"
+        data-bs-toggle="tab"
+        data-bs-target="#profile-tab-pane"
+        type="button"
+        role="tab"
+        aria-controls="profile-tab-pane"
+        aria-selected="false"
+        style="min-width: 100px"
+      >
+        Profil
+      </button>
+    </li>
+    <li
+      class="nav-item"
+      role="presentation"
+      style="margin-left: 20px; margin-right: 20px"
+    >
+      <button
+        class="nav-link"
+        id="recipies-tab"
+        data-bs-toggle="tab"
+        data-bs-target="#recipies-tab-pane"
+        type="button"
+        role="tab"
+        aria-controls="recipies-tab-pane"
+        aria-selected="false"
+      >
+        Opskrifter
+      </button>
+    </li>
+    <li
+      class="nav-item"
+      role="presentation"
+      style="margin-left: 20px; margin-right: 20px"
+    >
+      <button
+        class="nav-link"
+        id="shoppinglist-tab"
+        data-bs-toggle="tab"
+        data-bs-target="#shoppinglist-tab-pane"
+        type="button"
+        role="tab"
+        aria-controls="shoppinglist-tab-pane"
+        aria-selected="false"
+      >
+        Indkøbslister
+      </button>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="myTabContent">
+    <div
+      class="tab-pane fade show active m-5 text-center"
+      id="welcome-tab-pane"
+      role="tabpanel"
+      aria-labelledby="welcome-tab"
+      tabindex="0"
+    >
+      <br />
+      <h1><span style="color: #01c101">Green</span>Plate</h1>
+      <br />
+      <h3 class="mx-auto text-center" style="max-width: 600px">
+        Velkommen til din profilside, her har du adgang til dine gemte
+        opskrifter, indkøbslister og profildata.
+      </h3>
+    </div>
+
+    <div
+      class="tab-pane fade m-4"
+      id="profile-tab-pane"
+      role="tabpanel"
+      aria-labelledby="profile-tab"
+      tabindex="0"
+    >
+      <div class="col justify-content-center w-25 mx-auto">
+        <div class="row-md-6">
+          <div class="form-floating m-2">
+            <input
+              type="text"
+              class="form-control"
+              id="username-input"
+              value=""
+              disabled
+            />
+            <label for="username-input">Brugernavn kan ikke ændres</label>
+          </div>
+        </div>
+        <div class="row-md-6">
+          <div class="form-floating m-2">
+            <input
+              type="email"
+              class="form-control"
+              id="email-input"
+              value=""
+            />
+            <label for="email-input">Email adresse</label>
+          </div>
+        </div>
+        <div class="row-md-6">
+          <div class="form-floating m-2">
+            <input
+              type="text"
+              class="form-control"
+              id="first-name-input"
+              value=""
+            />
+            <label for="first-name-input">Fornavn</label>
+          </div>
+        </div>
+        <div class="row-md-6">
+          <div class="form-floating m-2">
+            <input
+              type="text"
+              class="form-control"
+              id="last-name-input"
+              value=""
+            />
+            <label for="last-name-input">Efternavn</label>
+          </div>
+        </div>
+        <div class="row-md-6">
+          <div class="form-floating m-2">
+            <input
+              type="text"
+              class="form-control"
+              id="password-input"
+              value=""
+            />
+            <label for="password-input">Gammelt password</label>
+          </div>
+        </div>
+        <div class="row-md-6">
+          <div class="form-floating m-2">
+            <input
+              type="text"
+              class="form-control"
+              id="password-input2"
+              value=""
+            />
+            <label for="password-input">Nyt password</label>
+          </div>
+        </div>
+        <div class="text-center">
+          <button class="btn btn-primary m-2" id="change_data_user">
+            Ændre brugerdata
+          </button>
+          <button class="btn btn-primary m-2" id="delete_data_user">
+            Slet bruger
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="tab-pane fade m-4"
+      id="recipies-tab-pane"
+      role="tabpanel"
+      aria-labelledby="recipies-tab"
+      tabindex="0"
+    >
+      <div id="recipe-cards" class="text-center">
+        Der er ikke noget at vise.
+      </div>
+    </div>
+
+    <div
+      class="tab-pane fade m-4"
+      id="shoppinglist-tab-pane"
+      role="tabpanel"
+      aria-labelledby="shoppinglist-tab"
+      tabindex="0"
+    >
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6 d-flex flex-column">
+            <div class="text-center">
+              <h5 class="w-50 mx-auto">Dagens indkøbslister</h5>
+            </div>
+            <div class="text-center m-3" id="new-list-field">
+              Der er ikke noget at vise
+            </div>
+          </div>
+          <div class="col-md-6 d-flex flex-column">
+            <div class="text-center">
+              <h5 class="w-50 mx-auto">Tidligere indkøbslister</h5>
+            </div>
+            <div class="text-center m-3" id="old-list-field">
+              Der er ikke noget at vise
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button
+    type="button"
+    class="btn btn-primary invisible"
+    data-bs-toggle="modal"
+    data-bs-target="#recipe-modal-user"
+    id="recipe-modal-trigger"
+  ></button>
+  <div
+    class="modal fade"
+    id="recipe-modal-user"
+    tabindex="-1"
+    aria-labelledby="recipe-modal-label"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="recipe-modal-label">Opskrift</h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body" id="recipe-modal-body"></div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button
+    type="button"
+    class="btn btn-primary invisible"
+    data-bs-toggle="modal"
+    data-bs-target="#shoppinglist-modal-user"
+    id="shoppinglist-modal-trigger"
+  ></button>
+  <div
+    class="modal fade"
+    id="shoppinglist-modal-user"
+    tabindex="-1"
+    aria-labelledby="shoppinglist-modal-label"
+    aria-hidden="true"
+    style="margin-top: 100px"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="shoppinglist-modal-label">
+            Indkøbsseddel
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body" id="shoppinglist-modal-body"></div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Luk indkøbsseddel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button
+    type="button"
+    class="btn btn-primary invisible"
+    data-bs-toggle="modal"
+    data-bs-target="#profile-modal-user"
+    id="profile-modal-trigger"
+  ></button>
+  <div
+    class="modal fade"
+    id="profile-modal-user"
+    tabindex="-1"
+    aria-labelledby="profile-modal-label"
+    aria-hidden="true"
+    style="margin-top: 100px"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="profile-modal-label">
+            Profilændringer
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body" id="profile-modal-body">
+          Er du sikker på du gerne vil tilføje ændringerne til din profil ?
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-primary"
+            id="change_user_data_btn"
+          >
+            Ændre brugerdata
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Luk profilændringer
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button
+    type="button"
+    class="btn btn-primary invisible"
+    data-bs-toggle="modal"
+    data-bs-target="#delete-modal-user"
+    id="delete-modal-trigger"
+  ></button>
+  <div
+    class="modal fade"
+    id="delete-modal-user"
+    tabindex="-1"
+    aria-labelledby="delete-modal-label"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="delete-modal-label">Slet Bruger</h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body" id="delete-modal-body">
+          Vil du slette din profil?
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Fortryd
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger"
+            data-bs-dismiss="modal"
+            id="delete_user_btn"
+          >
+            Slet bruger
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

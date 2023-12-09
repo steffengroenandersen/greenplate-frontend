@@ -1,0 +1,99 @@
+<div class="template">
+  <div class="container">
+    <div id="wrapper">
+      <div
+        class="card mx-auto shadow p-3 mb-5 bg-white rounded"
+        style="width: fit-content; top: 60px"
+      >
+        <div class="p-2 text-center" style="font-size: 20px">
+          <span style="color: #01c101">Green</span>Plate
+        </div>
+        <div
+          class="card-header"
+          style="
+            background: linear-gradient(to right, #39da1c, #3cfd52);
+            border-radius: 5px;
+          "
+        >
+          <div id="temptext"></div>
+        </div>
+        <div class="p-2">
+          <div id="spinner" class="spinner" style="padding-top: 10px"></div>
+        </div>
+        <div class="container custom-box">
+          <div class="recipe-container"></div>
+          <button
+            class="btn btn-primary float-end"
+            id="save-button-recipe"
+            data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop"
+            style="display: none"
+          >
+            Gem opskrift
+          </button>
+        </div>
+      </div>
+      <!-- START OF CreateRecipe MODAL-->
+      <div class="col-12 offset-md-10">
+        <div
+          class="modal fade"
+          id="staticBackdrop"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-labelledby="staticBackdropLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">
+                  Gem denne opskrift
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                  id="inside-close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="mb-6" id="recipe-modal-head"></div>
+                <div class="mb-3 text-center p-3">
+                  <label for="input-field-recipe" class="form-label"
+                    >Vælge titel på opskrift</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="input-field-recipe"
+                    placeholder="Titel"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Luk
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  id="save-recipe-db"
+                >
+                  Gem opskrift
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END OF CreateRecipe MODAL-->
+    </div>
+  </div>
+</div>

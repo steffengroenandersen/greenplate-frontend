@@ -1,0 +1,78 @@
+<div class="template">
+  <div class="container mt-5">
+    <h1>Admin Dashboard</h1>
+    <p>På denne side finder du relevant statistik om brugen af Greenplate.</p>
+
+    <!-- ZIPCODE COUNT -->
+    <div class="row">
+      <h2>Postnumre og Antal Søgninger</h2>
+      <p>
+        Dataene repræsenterer, hvor mange gange der er blevet foretaget
+        søgninger på produkter fra forskellige postnumre.
+      </p>
+
+      <div class="col-md-6">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Postnummer</th>
+              <th scope="col">Antal søgninger</th>
+            </tr>
+          </thead>
+          <tbody id="zip-count-table-body"></tbody>
+        </table>
+      </div>
+      <div class="col-md-6">
+        <div>
+          <canvas id="zipCountChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- STORE COUNT -->
+    <div class="row">
+      <h2>Butik og Antal Søgninger</h2>
+      <p>
+        Dataene repræsenterer, hvor mange gange der er blevet foretaget
+        søgninger på produkter fra forskellige butikker.
+      </p>
+
+      <div class="col-md-6">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Butik</th>
+              <th scope="col">Antal søgninger</th>
+            </tr>
+          </thead>
+          <tbody id="store-count-table-body"></tbody>
+        </table>
+      </div>
+
+      <div class="col-md-6">
+        <div>
+          <canvas id="storeCountChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCT COUNT -->
+    <div class="col-md-12">
+      <h2>Produkt og Antal Opskrifter</h2>
+      <p>
+        Dataene repræsenterer, hvor mange gange der er et produkt er blevet
+        brugt i en opskrift.
+      </p>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Produkt</th>
+            <th scope="col">EAN</th>
+            <th scope="col">Antal Opskrifter</th>
+          </tr>
+        </thead>
+        <tbody id="product-count-table-body"></tbody>
+      </table>
+    </div>
+  </div>
+</div>

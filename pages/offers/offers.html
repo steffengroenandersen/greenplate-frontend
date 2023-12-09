@@ -1,0 +1,202 @@
+<div class="template">
+  <div id="sorts" class="position-fixed z-2">
+    <!-- <b class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvassorts" aria-controls="offcanvasExample">
+        filtre 
+      </b> -->
+  </div><div class="sticky-top top-50 z-3"><div id="spinner" class="spinner" style="padding-top: 10px"></div></div>
+  <div
+    class="container mt-4 mt-4 mx-auto d-flex align-items-center justify-content-around"
+  >
+    <div
+      id="offer-cards"
+      class="row justify-content-around"
+      style="visibility: hidden"
+    ></div>
+  </div>
+  <div
+    class="position-fixed end-0 d-flex flex-column align-items-center hover-show"
+    style="top: calc(50px + 10px)"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#offcanvasExample"
+    aria-controls="offcanvasExample"
+    id="canvas-hover"
+  >
+    <div
+      class="badge bg-danger rounded-circle"
+      style="font-size: 15px"
+      id="number-canvas"
+    >
+      0
+    </div>
+    <img src="../../images/shopcart.png" style="height: 50px; width: 50px" />
+  </div>
+  <div
+    class="offcanvas offcanvas-end container"
+    tabindex="-1"
+    id="offcanvasExample"
+    data-bs-backdrop="false"
+    aria-labelledby="offcanvasExampleLabel"
+  >
+    <button
+      class="btn btn-primary position-absolute top-0 end-0 m-3 justify-content-center modal-dialog-centered"
+      type="button"
+      id="close-canvas-button"
+      style="width: 20px; height: 20px"
+    >
+      X
+    </button>
+    <div>
+      <div
+        class="offcanvas-header row"
+        style="border-bottom: solid 1px rgb(31, 156, 31)"
+      >
+        <h4 class="offcanvas-head text-center pt-0 m-0" style="color: #01c101">
+          Green<span style="color: black">Plate</span>
+        </h4>
+      </div>
+      <div id="store_data"></div>
+      <div class="row text-center">
+        <div id="placeholdertext">
+          Hvis du er medlem kan du vælge 3-5 <br />
+          produkter og få en opskrift lavet af en AI!
+        </div>
+      </div>
+      <h5
+        class="offcanvas-title text-center p-2"
+        id="offcanvasExampleLabel"
+        style="border-bottom: 1px rgb(31, 156, 31) solid"
+      >
+        Produktliste
+      </h5>
+    </div>
+    <div class="offcanvas-body text-center">
+      <div class="row">
+        <div class="col" style="max-width: 70%">Produkt</div>
+        <div class="col" style="max-width: 25%">Pris&nbsp;&nbsp;&nbsp;</div>
+        <div class="col" style="max-width: 5%"></div>
+      </div>
+      <div class="col" id="canvas-cards"></div>
+      <div class="row">
+        <div class="text-center" id="error_recipe_msg" style="color: red">
+          <br />
+        </div>
+        <button
+          class="btn btn-primary text-center invisible m-1"
+          type="button"
+          id="recipe-button"
+        >
+          Lav en opskrift til mig ud fra produkter
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary text-center invisible m-1"
+          id="shoplist-button"
+          data-bs-toggle="modal"
+          data-bs-target="#sl-modal"
+        >
+          Gem opskrift på min profil
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="selectionLimitModal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content shadow-lg mb-5 bg-white rounded text-center">
+        <div class="modal-body">
+          <p>Du kan højst vælge 5 produkter.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ul class="pagination" id="pagination"></ul>
+
+  <div
+    class="offcanvas offcanvas-start"
+    tabindex="-1"
+    id="offcanvassorts"
+    aria-labelledby="offcanvasExampleLabel"
+  >
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Søg og filtrer</h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="offcanvas-body">
+      <div id="sorts-and-sorting">
+        <div class="mb-3">
+          <label for="search-input" class="form-label">Søg efter</label>
+          <input
+            type="text"
+            class="form-control"
+            id="search-input"
+            placeholder="Example input placeholder"
+          />
+          <div id="range-value"></div>
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-dismiss="offcanvas"
+            id="searchselection"
+          >
+            Søg
+          </button>
+        </div>
+        <div class="dropdown mt-3">
+          <label for="sorting-input" class="form-label">Sorter efter</label>
+          <select class="form-select" id="sorting-input">
+            <option value="" selected>Sorter efter</option>
+            <option value="percentDiscount" id="sort_1">bedste tilbud</option>
+            <option value="newPrice" id="sort_2">pris</option>
+            <option value="description" id="sort_3">alfabetisk</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="modal fade"
+    id="sl-modal"
+    tabindex="-1"
+    aria-labelledby="sl-modal-label"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="sl-modal-label">
+            Indkøbsliste oversigt
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            id="close-list-inside"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div
+          id="error-msg-shoplist"
+          class="text-center"
+          style="color: red"
+        ></div>
+        <div id="shopping-modal-body"></div>
+        <div class="modal-footer align-self-center justify-content-center">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Tilbage til butikken
+          </button>
+          <button type="button" class="btn btn-primary" id="save-shop-list">
+            Gem denne indkøbsliste
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

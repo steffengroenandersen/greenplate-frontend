@@ -1,0 +1,118 @@
+<div class="template">
+    <div class="container">
+        
+        <!-- HERO SECTION -->
+        <div class="px-4 py-5 my-5 text-center">
+            <h1 class="display-5 fw-bold text-body-emphasis">Adminpanel: Opskrifter</h1>
+            <div class="col-lg-6 mx-auto">
+              <p class="lead mb-4">Velkommen til Adminpanelet for Opskrifter: Centraliseret styring af gastronomiske kreationer med mulighed for problemfri gennemgang, redigering og sletning</p>
+              <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <button type="button" class="btn btn-primary btn-lg px-4 gap-3" data-bs-toggle="modal" data-bs-target="#recipeCreateModal"id="createRecipeModalBtn">Lav ny opskrift</button>
+              </div>
+            </div>
+          </div>
+
+        <!-- RECIPE SECTION -->
+        <div id="recipe-section">
+            <h3 class="text-center mb-4">Der er ikke nogle opskrifter...</h3>
+        </div>
+    </div>
+
+    <!-- CHANGE RECIPE MODAL --> 
+    <div class="modal fade" id="changeRecipe" tabindex="-1" aria-labelledby="changeRecipeLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="changeRecipelLabel">Ændre opskrift:</h1>
+            <div id="modal-recipe-id"></div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+
+              <div class="mb-3">
+                <label for="recipe-name" class="col-form-label">Recipe name:</label>
+                <input type="text" class="form-control" id="recipe-name" placeholder="Recipe name....">
+              </div>
+
+              <div class="mb-3">
+                <label for="recipe-body" class="col-form-label">Recipe body:</label>
+                <textarea class="form-control" id="recipe-body" placeholder="Recipe body..."></textarea>
+              </div>
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fortryd</button>
+            <button type="button" class="btn btn-primary" id="save-recipe-button" data-bs-dismiss="modal">Gem ændringer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DELETE RECIPE MODAL -->   
+    <div class="modal fade" id="deleteRecipe" tabindex="-1" aria-labelledby="deleteRecipeLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="deleteRecipelLabel">Slet opskrift:</h1>
+            <div id="delete-modal-recipe-id"></div>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+        <form>
+
+          <div class="mb-3">
+            <label for="delete-recipe-name" class="col-form-label">Recipe name:</label>
+            <input type="text" class="form-control" id="delete-recipe-name" placeholder="Recipe name....">
+          </div>
+
+          <div class="mb-3">
+            <label for="delete-recipe-body" class="col-form-label">Recipe body:</label>
+            <textarea class="form-control" id="delete-recipe-body" placeholder="Recipe body..."></textarea>
+          </div>
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fortryd</button>
+            <button type="button" class="btn btn-primary" id="delete-recipe-button" data-bs-dismiss="modal">Slet opskrift</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  <!-- CREATE RECIPE MODAL GOES INTO RECIPE-OVERVIEW-->
+  <div class="modal fade" id="recipeCreateModal" tabindex="-1" aria-labelledby="recipeCreateModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-header">
+    <h1 class="modal-title fs-5" id="recipeCreateModalLabel">Generer opskrift</h1>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+    <h5 class="text-decoration-underline">Ingredienser</h5>
+    <div id="ingredientFields">
+      <div class="input-group mb-3">
+          <select class="form-select form-select-lg" aria-label=".form-select-lg example">
+              <option value="">Vælg et produkt</option>
+          </select>
+      </div>
+  </div>
+  <button class="btn btn-primary inputFieldButton" type="button">
+    <i class="bi bi-plus-circle"></i>
+</button>
+<button class="btn btn-danger removeFieldButton" type="button">
+  <i class="bi bi-dash-circle"></i>
+</button>
+    </div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Luk</button>
+    <button type="button" class="btn btn-primary" id="createRecipeButton">Lav opskrift</button>
+    </div>
+    </div>
+    </div>
+    </div>
+    <!-- END OF CREATE RECIPE MODAL  GOES INTO RECIPE-OVERVIEW-->
+  
+</div>
